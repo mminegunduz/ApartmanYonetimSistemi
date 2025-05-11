@@ -1,0 +1,39 @@
+@model List<Entities.Models.Gorev>
+
+@{
+    ViewData["Title"] = "Görev Listesi";
+}
+
+<h2>Görevler</h2>
+
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>Görev ID</th>
+            <th>Görev Adı</th>
+            <th>Durum</th>
+            <th>İşlem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var gorev in Model)
+        {
+            <tr>
+                <td>@gorev.GorevId</td>
+                <td>@gorev.GorevAd</td>
+                <td>@(gorev.Durum ? "Tamamlandı" : "Bekliyor")</td>
+                <td>
+                    <form method="post" asp-action="GorevDurumDegistir" asp-controller="Calisan" class="d-inline">
+                        <input type="hidden" name="id" value="@gorev.GorevId" />
+                        <button type="submit" class="btn btn-sm btn-warning">Durumu Değiştir</button>
+                    </form>
+                    <form method="post" asp-action="GorevSil" asp-controller="Kullanici" class="d-inline ms-2">
+                        <input type="hidden" name="id" value="@gorev.GorevId" />
+                        <button type="submit" class="btn btn-sm btn-danger">Sil</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Home/Yonetici" class="btn btn-primary " style="color: white; "; >← Geri Dön</a>

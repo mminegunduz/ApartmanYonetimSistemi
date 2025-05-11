@@ -1,0 +1,22 @@
+@model IEnumerable<Entities.Models.Duyuru>
+
+<h2>Duyurular</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Başlık</th>
+            <th>İçerik</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var duyuru in Model)
+        {
+            <tr>
+                <td>@duyuru.Baslik</td>
+                <td>@duyuru.Icerik</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Home/Calisan" class="btn btn-primary " ; >← Geri Dön</a>

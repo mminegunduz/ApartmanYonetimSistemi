@@ -1,0 +1,65 @@
+@{
+    ViewData["Title"] = "Çalışan Paneli";
+    var calisanAdi = ViewBag.CalisanAdi as string;
+    var username = User.Identity.Name;
+}
+
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-primary">Merhaba, @username 👋</h2>
+        <p class="lead">Bu panelden görevlerinizi takip edebilir, apartmanla ilgili duyuruları inceleyebilirsiniz.</p>
+    </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+        <!-- Bilgilerimi Görüntüle -->
+        <div class="col">
+            <div class="card h-100 border-success shadow-sm">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title fw-semibold text-success">Bilgilerim</h5>
+                    <p class="card-text mb-4">Kişisel bilgilerinizi görüntüleyin veya güncelleyin.</p>
+                    <div class="mt-auto d-grid">
+                        <a href="/Calisan/Profil" class="btn btn-outline-success">Bilgilerimi Görüntüle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Görev Takibi -->
+        <div class="col">
+            <div class="card h-100 border-warning shadow-sm">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title fw-semibold text-warning">Görev Takibi</h5>
+                    <p class="card-text mb-4">Mevcut görevlerinizi görüntüleyin ve durumlarını yönetin.</p>
+                    <div class="mt-auto d-grid">
+                        <a href="/Calisan/Gorevler" class="btn btn-outline-warning">Görevleri Görüntüle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Duyurular -->
+        <div class="col">
+            <div class="card h-100 border-info shadow-sm">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title fw-semibold text-info">Duyurular</h5>
+                    <p class="card-text mb-4">Apartmanla ilgili duyuruları görüntüleyin.</p>
+                    <div class="mt-auto d-grid gap-2">
+                        <a href="/Duyuru/IndexC" class="btn btn-outline-primary">Duyuruları Görüntüle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+
+
+    </div>
+
+    <!-- Çıkış -->
+    <div class="row mt-5">
+        <div class="col text-center">
+            <a href="/" class="btn btn-danger px-5">Çıkış Yap</a>
+        </div>
+    </div>
+</div>

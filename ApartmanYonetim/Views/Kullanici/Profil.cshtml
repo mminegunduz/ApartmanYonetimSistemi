@@ -1,0 +1,34 @@
+@model Entities.Models.Kullanici
+
+<h2>Profil Bilgileriniz</h2>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Bilgi</th>
+                <th>Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Adınız Soyadınız</td>
+                <td>@Model.KullaniciAd</td>
+            </tr>
+            <tr>
+                <td>Daire Numaranız</td>
+                <td>@Model.KullaniciId</td>
+            </tr>
+             <tr>
+                <td>Telefon Numaranız</td>
+                <td>@Model.Telefon</td>
+            </tr>
+            <tr>
+                <td>Mail Adresiniz</td>
+                <td>@Model.Mail</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<a href="/Home/Yonetici" class="btn btn-primary">Geri Dön</a>

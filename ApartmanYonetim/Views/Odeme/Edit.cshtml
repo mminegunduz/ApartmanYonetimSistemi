@@ -1,0 +1,24 @@
+@model Entities.Models.Odeme
+
+<h2>Ödeme Güncelle</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="OdemeId" />
+    <div class="form-group">
+        <label>Kullanıcı Adı</label>
+        <input asp-for="KullaniciAd" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Kullanıcı ID</label>
+        <input asp-for="KullaniciId" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Ödenecek Tutar</label>
+        <input asp-for="OdenecekTutar" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Ödeme Bilgisi</label>
+        <input asp-for="OdemeBilgisi" type="checkbox" />
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Güncelle</button>
+</form>

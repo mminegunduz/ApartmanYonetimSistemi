@@ -1,0 +1,26 @@
+@model IEnumerable<Entities.Models.Odeme>
+
+<h2>Ödeme Takibi</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Kullanıcı Adı</th>
+            <th>Tutar</th>
+            <th>Ödendi mi?</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var odeme in Model)
+        {
+            <tr>
+                <td>@odeme.KullaniciAd</td>
+                <td>@odeme.OdenecekTutar ₺</td>
+                <td>@(odeme.OdemeBilgisi ? "Evet" : "Hayır")</td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Home/ApartmanSakini" class="btn btn-primary " style="color: white; "; >← Geri Dön</a>
+

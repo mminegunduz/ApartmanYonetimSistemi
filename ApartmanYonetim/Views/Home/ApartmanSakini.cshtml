@@ -1,0 +1,61 @@
+@{
+    ViewData["Title"] = "Apartman Sakini Paneli";
+    var username = User.Identity.Name;
+}
+
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-primary">Merhaba, @username 👋</h2>
+        <p class="lead">Bu panelden kişisel bilgilerinizi, ödemelerinizi ve apartman duyurularını görüntüleyebilirsiniz.</p>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <!-- Bilgilerim -->
+        <div class="col">
+            <div class="card h-100 border-primary shadow-sm">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title fw-semibold text-primary">Bilgilerim</h5>
+                    <p class="card-text mb-4">Ad, soyad, daire numarası gibi bilgilerinizi inceleyin.</p>
+                    <div class="mt-auto d-grid">
+                        <a href="/Sakin/Profil" class="btn btn-outline-primary">Bilgilerimi Görüntüle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ödeme Bilgilerim -->
+        <div class="col">
+            <div class="card h-100 border-success shadow-sm">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title fw-semibold text-success">Ödeme Bilgilerim</h5>
+                    <p class="card-text mb-4">Aidat ve ödeme durumunuzu kontrol edin.</p>
+                    <div class="mt-auto d-grid">
+                        <a href="/Odeme/Odemeler" class="btn btn-outline-success">Ödemelerimi Görüntüle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Duyurular -->
+        <div class="col">
+            <div class="card h-100 border-info shadow-sm">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title fw-semibold text-info">Apartman Duyuruları</h5>
+                    <p class="card-text mb-4">Apartmanla ilgili güncel bilgileri takip edin.</p>
+                    <div class="mt-auto d-grid gap-2">
+                        <a href="/Duyuru/IndexA" class="btn btn-outline-info">Duyuruları Görüntüle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Çıkış -->
+    <div class="row mt-5">
+        <div class="col text-center">
+            <a href="/" class="btn btn-danger px-5">Çıkış Yap</a>
+        </div>
+    </div>
+</div>

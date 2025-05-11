@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Giriş";
+}
+
+<div class="container d-flex justify-content-center" style="padding-top: 100px;">
+    <div class="card shadow-lg p-4" style="width: 100%; max-width: 400px; border-radius: 1rem;">
+        <div class="card-body">
+            <h2 class="text-center mb-4 text-primary fw-bold">Giriş Yap</h2>
+
+            <form method="post" action="/Home/Login">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Kullanıcı Adı" required>
+                    <label for="username">Kullanıcı Adı</label>
+                </div>
+
+                <div class="form-floating mb-4">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Şifre" required>
+                    <label for="password">Şifre</label>
+                </div>
+
+                <button class="btn btn-primary w-100 py-2" type="submit">Giriş Yap</button>
+            </form>
+        </div>
+    </div>
+</div>

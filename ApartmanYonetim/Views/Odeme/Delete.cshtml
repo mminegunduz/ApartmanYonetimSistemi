@@ -1,0 +1,11 @@
+@model Entities.Models.Odeme
+
+<h2>Ödeme Sil</h2>
+
+<p><strong>@Model.KullaniciAd</strong> kullanıcısının ödemesi silinecek. Emin misiniz?</p>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="OdemeId" />
+    <button type="submit" class="btn btn-danger">Evet, Sil</button>
+    <a href="/Odeme/Takip" class="btn btn-secondary">İptal</a>
+</form>

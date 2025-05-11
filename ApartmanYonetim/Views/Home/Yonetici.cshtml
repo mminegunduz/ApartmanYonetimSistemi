@@ -1,0 +1,114 @@
+@{
+    ViewData["Title"] = "Yönetici Paneli";
+    var username = User.Identity.Name;
+}
+
+<style>
+    html, body {
+        height: 100%;
+        overflow-y: hidden;
+    }
+
+    .dashboard-card {
+        font-size: 1rem;
+    }
+
+    .dashboard-card h5 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .dashboard-card p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .dashboard-card .btn {
+        padding: 0.5rem 0.85rem;
+        font-size: 0.95rem;
+    }
+
+    .welcome-text h2 {
+        font-size: 1.75rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .welcome-text p {
+        font-size: 1.05rem;
+    }
+
+    .exit-btn {
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+    }
+</style>
+
+<div class="container mt-3 px-3">
+    <div class="text-center welcome-text">
+        <h2 class="fw-bold text-primary">Merhaba, @username 👋</h2>
+        <p>Kullanıcıları, ödemeleri ve duyuruları yönetin</p>
+    </div>
+
+    <div class="row g-3 mt-2">
+        <!-- İlk satır: 3 kart -->
+        <div class="col-12 col-md-4">
+            <div class="card dashboard-card border-primary shadow-sm h-100 text-center p-3">
+                <h5 class="text-primary">Kullanıcı İşlemleri</h5>
+                <p>Kullanıcı ekle/düzenle</p>
+                <div class="d-grid gap-2">
+                    <a href="/Kullanici/Ekle" class="btn btn-outline-primary">Ekle</a>
+                    <a href="/Kullanici" class="btn btn-outline-primary">Listele</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+            <div class="card dashboard-card border-success shadow-sm h-100 text-center p-3">
+                <h5 class="text-success">Aidat ve Ödemeler</h5>
+                <p>Ödemeleri yönet</p>
+                <div class="d-grid gap-2">
+                    <a href="/Odeme/Duzenle" class="btn btn-outline-success">Düzenle</a>
+                    <a href="/Odeme/Takip" class="btn btn-outline-success">Takip</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+            <div class="card dashboard-card border-info shadow-sm h-100 text-center p-3">
+                <h5 class="text-info">Duyurular</h5>
+                <p>Duyuru işlemleri</p>
+                <div class="d-grid gap-2">
+                    <a href="/Duyuru/Ekle" class="btn btn-outline-info">Ekle</a>
+                    <a href="/Duyuru/Index" class="btn btn-outline-info">Görüntüle</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- İkinci satır: 2 kart -->
+        <div class="col-12 col-md-6">
+            <div class="card dashboard-card border-warning shadow-sm h-100 text-center p-3">
+                <h5 class="text-warning">Görev Takibi</h5>
+                <p>Görev oluştur ve yönet</p>
+                <div class="d-grid gap-2">
+                    <a href="/Kullanici/GorevEkle" class="btn btn-outline-warning">Ekle</a>
+                    <a href="/Kullanici/Gorevler" class="btn btn-outline-warning">Listele</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+            <div class="card dashboard-card border-secondary shadow-sm h-100 text-center p-3">
+                <h5 class="text-secondary">Bilgilerim</h5>
+                <p>Profil bilgileri</p>
+                <div class="d-grid gap-2">
+                    <a href="/Kullanici/Profil" class="btn btn-outline-secondary">Görüntüle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Çıkış -->
+    <div class="text-center mt-3">
+        <a href="/" class="btn btn-danger exit-btn">Çıkış Yap</a>
+    </div>
+</div>

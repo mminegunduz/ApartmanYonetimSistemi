@@ -1,0 +1,55 @@
+@model List<Entities.Models.Kullanici> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        table {
+            background-color: palevioletred; 
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="table table-hover mx-auto w-75">
+        <thead>
+            <tr>
+                <th scope="col">Kullanıcı ID</th>
+                <th scope="col">Kullanıcı Adı Soyadı</th>
+                <th scope="col">İşlem</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Entities.Models.Kullanici kln in Model)
+            {
+                <tr>
+                    <td>@kln.KullaniciId</td>
+                    <td>@kln.KullaniciAd</td>
+                    <td>
+                        <div class="d-flex gap-2">
+                            <form method="post" asp-action="KullaniciSil" onsubmit="return confirm('Bu kullanıcıyı silmek istediğinize emin misiniz?');">
+                                <input type="hidden" name="id" value="@kln.KullaniciId" />
+                                <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                            </form>
+
+                            <a href="/Kullanici/Duzenle/@kln.KullaniciId" class="btn btn-warning btn-sm">Düzenle</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="text-center mt-4">
+        <a href="/Home/Yonetici" class="btn btn-primary">← Geri Dön</a>
+    </div>
+
+</body>
+</html>

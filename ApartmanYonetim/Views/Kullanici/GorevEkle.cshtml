@@ -1,0 +1,21 @@
+@model Entities.Models.Gorev
+
+@{
+    ViewData["Title"] = "Görev Ekle";
+}
+
+<h2>Yeni Görev Tanımla</h2>
+
+<form asp-action="GorevEkle" method="post" class="mt-3">
+    <div class="mb-3">
+        <label for="GorevAd" class="form-label">Görev Adı</label>
+        <input type="text" asp-for="GorevAd" class="form-control" required />
+    </div>
+
+    <div class="form-check mb-3">
+        <input type="checkbox" asp-for="Durum" class="form-check-input" />
+        <label class="form-check-label">Görev Tamamlandı mı?</label>
+    </div>
+
+    <button type="submit" class="btn btn-success">Görev Ekle</button>
+</form>
